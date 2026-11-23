@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Ghar Baithe Writing Work — flexible copy-writing work information.">
+  <title>Writing Work — Ghar Baithe Kaam</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --blue: #2457d6;
+      --blue-dark: #1744b5;
+      --pale: #eef3ff;
+      --line: #e8ebf2;
+      --white: #fff;
+      --green: #16834a;
+      --shadow: 0 16px 45px rgba(25, 42, 85, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f7f8fc;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 36px)); margin: auto; }
+    header { padding: 22px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px; }
+    .logo {
+      width: 43px; height: 43px; display: grid; place-items: center;
+      color: white; background: linear-gradient(135deg, #3268ed, #6b8fff);
+      border-radius: 13px; font-size: 21px; box-shadow: 0 7px 18px #2457d633;
+    }
+    .brand small { display: block; color: var(--muted); font-weight: 500; font-size: 12px; }
+    .hero {
+      position: relative; overflow: hidden; margin: 12px auto 26px;
+      padding: clamp(34px, 7vw, 72px) clamp(22px, 7vw, 76px);
+      border-radius: 28px; color: white;
+      background: radial-gradient(circle at 88% 10%, #7396ff 0, transparent 28%),
+                  linear-gradient(125deg, #173c9e, #2861df 65%, #4778ed);
+      box-shadow: 0 22px 55px rgba(32, 77, 180, .2);
+    }
+    .eyebrow { display: inline-block; padding: 6px 12px; border: 1px solid #ffffff55; border-radius: 30px; color: #e5ecff; font-size: 13px; }
+    h1 { max-width: 760px; margin: 19px 0 14px; font-size: clamp(31px, 5.2vw, 52px); line-height: 1.13; letter-spacing: -.9px; }
+    .hero p { max-width: 680px; color: #e7edff; font-size: 17px; margin: 0 0 25px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 50px; padding: 12px 23px; border-radius: 12px;
+      text-decoration: none; font-weight: 800; transition: .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-white { background: white; color: #204dbb; box-shadow: 0 8px 22px #102d7b33; }
+    .fee { margin-top: 19px; color: #fff; font-size: 14px; font-weight: 700; }
+    .fee strong { color: #fff2a8; }
+    section { margin: 26px auto; }
+    .section-head { margin-bottom: 18px; }
+    .kicker { color: var(--blue); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 5px 0 0; font-size: clamp(24px, 3.5vw, 34px); line-height: 1.25; letter-spacing: -.45px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .card {
+      background: var(--white); border: 1px solid var(--line); border-radius: 17px;
+      padding: 21px; box-shadow: 0 5px 18px rgba(20, 35, 70, .035);
+    }
+    .card p { margin: 7px 0 0; color: var(--muted); }
+    .card h3 { margin: 0; font-size: 17px; }
+    .icon {
+      width: 38px; height: 38px; display: grid; place-items: center; margin-bottom: 12px;
+      border-radius: 11px; background: var(--pale); color: var(--blue); font-size: 19px;
+    }
+    .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .step { display: flex; gap: 15px; }
+    .number {
+      flex: 0 0 38px; height: 38px; display: grid; place-items: center;
+      border-radius: 12px; background: var(--blue); color: white; font-weight: 900;
+    }
+    .notice {
+      padding: 22px; border: 1px solid #dce5ff; border-radius: 17px;
+      background: #eff4ff; margin-top: 18px;
+    }
+    .notice h3 { margin: 0 0 7px; color: #1c49b2; }
+    .notice p { margin: 0; color: #34466f; }
+    .faq { display: grid; gap: 11px; }
+    details { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 16px 19px; }
+    summary { cursor: pointer; font-weight: 750; list-style: none; display: flex; justify-content: space-between; gap: 15px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--blue); font-size: 21px; line-height: 1; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 10px 0 0; color: var(--muted); }
+    .closing {
+      text-align: center; padding: clamp(30px, 6vw, 55px) 22px;
+      color: white; border-radius: 24px;
+      background: linear-gradient(125deg, #173c9e, #2861df);
+    }
+    .closing h2 { color: white; }
+    .closing p { color: #e7edff; margin: 10px auto 22px; max-width: 590px; }
+    footer { padding: 25px 0 34px; text-align: center; color: #7b8496; font-size: 13px; }
+    .telegram-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 5;
+      width: 54px; height: 54px; display: grid; place-items: center;
+      border-radius: 50%; background: #229ed9; color: white; text-decoration: none;
+      font-size: 24px; box-shadow: 0 8px 22px #0003;
+    }
+    @media (max-width: 650px) {
+      .wrap { width: min(100% - 26px, 1080px); }
+      .grid, .steps { grid-template-columns: 1fr; }
+      .hero { border-radius: 21px; margin-top: 4px; }
+      .hero p { font-size: 15px; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">✍</div>
+      <div>Freelancer publication<small>Ghar Baithe Writing Work</small></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <span class="eyebrow">✍ Work from home opportunity</span>
+        <h1>Achhi Handwriting Hai? Ghar Baithe Kamai Shuru Karein</h1>
+        <p>Students, housewives aur job seekers ke liye simple copy-writing work — apni suvidha ke hisaab se, flexible timing par.</p>
+        <a class="btn btn-white" href="https://t.me/+Wm-DU8Ud3jJmMzU1" target="_blank" rel="noopener noreferrer">✈ Join Telegram Channel</a>
+        <div class="fee">Registration fee <strong>ONLY ₹499</strong> — sirf kaam ke badle payment</div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="kicker">Kis ke liye hai</div>
+          <h2>Yeh Work Opportunity Kin Logon Ke Liye Perfect Hai</h2>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="icon">🎓</div><h3>Students</h3><p>Students jo padhai ke saath extra income chahte hain</p></article>
+          <article class="card"><div class="icon">🏡</div><h3>Housewives</h3><p>Housewives jo ghar se bahar nikle bina kaam karna chahti hain</p></article>
+          <article class="card"><div class="icon">💼</div><h3>Job Seekers</h3><p>Job seekers jinhe part-time ya flexible kaam chahiye</p></article>
+          <article class="card"><div class="icon">✍️</div><h3>Good Handwriting</h3><p>Koi bhi jiski handwriting saaf hai — experience zaroori nahi</p></article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="kicker">Kaise shuru karein</div>
+          <h2>4 Simple Steps Mein Kaam Shuru Karein</h2>
+        </div>
+        <div class="steps">
+          <article class="card step"><div class="number">1</div><div><h3>Telegram Channel Join Karein</h3><p>Upar diye gaye button se hamare official channel mein shaamil hon.</p></div></article>
+          <article class="card step"><div class="number">2</div><div><h3>Sample Work Dekhein Aur Samjhein</h3><p>Channel mein kaam ka tareeka, guidelines aur sample copy share ki jaati hai.</p></div></article>
+          <article class="card step"><div class="number">3</div><div><h3>Apni Pehli Writing Jama Karein</h3><p>Diye gaye instructions ke hisaab se kaam poora karke bhejein.</p></div></article>
+          <article class="card step"><div class="number">4</div><div><h3>Payment Paayein</h3><p>Kaam verify hone ke baad tay kiye gaye tareeke se payment milti hai.</p></div></article>
+        </div>
+        <div class="notice">
+          <h3>Saaf-Saaf Baat</h3>
+          <p>Book Writing Registration – Only ₹499 Start your book writing journey today."</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="kicker">FAQ</div>
+          <h2>Aksar Poochhe Jaane Waale Sawaal</h2>
+        </div>
+        <div class="faq">
+          <details><summary>Kya isme koi fee deni hogi?</summary><p>Haa only 499 Registration fee.</p></details>
+          <details><summary>Kamai kitni hogi?</summary><p>Kaam ki matra aur quality ke hisaab se payment tay hoti hai. Exact rates channel mein share ki jaati hain.</p></details>
+          <details><summary>Kya mujhe experience chahiye?</summary><p>Nahi, saaf handwriting kaafi hai. Beginners bhi shuru kar sakte hain.</p></details>
+          <details><summary>Samay ki koi pabandi hai?</summary><p>Nahi, aap apni suvidha ke hisaab se samay nikal kar kaam kar sakte hain.</p></details>
+        </div>
+      </section>
+
+      <section class="closing">
+        <h2>Aaj Hi Shuruaat Karein</h2>
+        <p>Hamare Telegram channel se judein aur kaam ki poori jaankari paayein.</p>
+        <a class="btn btn-white" href="https://t.me/+Wm-DU8Ud3jJmMzU1" target="_blank" rel="noopener noreferrer">✈ Join Now</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>© 2026 Freelancer publication. Saari jaankari sahi rakhi gayi hai.</footer>
+  <a class="telegram-float" href="https://t.me/+Wm-DU8Ud3jJmMzU1" target="_blank" rel="noopener noreferrer" aria-label="Join Telegram">➤</a>
+</body>
+</html>
